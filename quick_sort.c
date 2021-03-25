@@ -10,14 +10,14 @@ void swap(int *p, int *q)
 
 int Partition(int arr[], int p, int r)
 {
-    int x = arr[p];
-    int i = p;
+    int x = arr[r];
+    int i = r;
 
-    for (int j = i + 1; j <= r; j++)
+    for (int j = i - 1; j >= p; j--)
     {
-        if (arr[j] < x)
+        if (arr[j] > x)
         {
-            i = i + 1;
+            i = i - 1;
             swap(arr + i, arr + j);
         }
     }
